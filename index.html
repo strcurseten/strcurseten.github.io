@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    </head>
+    <title>Places to Visit</title>
+    <body>
+        <h1 style="font-family:Arial; text-align:center;">(KIRS)TEN PLACES TO VISIT</h1>
+        <div id="map" style="height: 800px;">
+            <script>
+                var map = L.map('map').setView([37.5512, 126.9882], 3);
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 12,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                // Namsan Tower              
+                var marker = L.marker([37.5512, 126.9882]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([37.5512, 126.9882])
+                .setContent("Namsan Tower, Seoul, South Korea")
+                .addTo(map);
+
+                // Circle
+                var circleCenter = [37.5512, 126.9882];
+                var circleOptions = {
+                color: '#880808',
+                fillOpacity: 0
+                }
+                var circle = L.circle(circleCenter, 50000, circleOptions);
+                circle.addTo(map);
+
+                // Suga Jinja          
+                var marker = L.marker([35.6853, 139.7225]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([35.6853, 139.7225])
+                .setContent("Suga Jinja Shrine, Tokyo, Japan")
+                .addTo(map);
+
+                //Cebu
+                var marker = L.marker([10.3157, 123.8854]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([10.3157, 123.8854])
+                .setContent("Cebu City, Philippines")
+                .addTo(map);
+
+                //Kuala Lumpur
+                var marker = L.marker([3.1569, 101.7123]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([3.1569, 101.7123])
+                .setContent("Kuala Lumpur, Malaysia")
+                .addTo(map);
+
+                //Gardens by the Bay
+                var marker = L.marker([1.2816, 103.8636]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([1.2816, 103.8636])
+                .setContent("Gardens by the Bay, Marina South, Singapore")
+                .addTo(map);
+
+                //Thailand
+                var marker = L.marker([7.8804, 98.3923]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([7.8804, 98.3923])
+                .setContent("Phuket, Thailand")
+                .addTo(map);
+
+                //London
+                var marker = L.marker([51.5007, -0.1246]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([51.5007, -0.1246])
+                .setContent("Big Ben, London, United Kingdom")
+                .addTo(map);
+
+                //Italy 
+                var marker = L.marker([41.8902, 12.4922]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([41.8902, 12.4922])
+                .setContent("Colosseum, Rome, Italy")
+                .addTo(map);
+
+                //Iceland
+                var marker = L.marker([64.0485, -16.1793]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([64.0485, -16.1793])
+                .setContent("Jökulsárlón Glacier Lagoon, Iceland")
+                .addTo(map);
+
+                //New York
+                var marker = L.marker([40.7128, -74.0060]).addTo(map);
+
+                var popup = L.popup()
+                .setLatLng([40.7128, -74.0060])
+                .setContent("New York City, New York, USA")
+                .addTo(map);
+
+                // Polygon
+                var latlngs = [
+                    [64.0485, -16.1793],
+                    [40.7128, -74.0060],
+                    [51.5007, -0.1246]
+                ];
+                var polygon = L.polygon(latlngs, {color: 'yellow'});
+                polygon.addTo(map);
+
+                //Polyline, Letter K
+                var latlngs = [
+                    [[41.8902, 12.4922], 
+                    [-7.8902, 12.4922]],
+                    [[41.8902, 30.4922],
+                    [23.8902, 12.4922],
+                    [-7.8902, 35.4922]]
+                    ];
+                var polyline = L.polyline(latlngs, {color: '#70a9a1'});
+                polyline.addTo(map);
+            </script>
+        </div>
+    </body>
+</html>
